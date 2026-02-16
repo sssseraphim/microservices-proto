@@ -24,7 +24,7 @@ const (
 type CreateOrderRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	OrderItem     []*OrderItem           `protobuf:"bytes,2,rep,name=order_item,json=orderItem,proto3" json:"order_item,omitempty"`
+	OrderItems    []*OrderItem           `protobuf:"bytes,2,rep,name=order_items,json=orderItems,proto3" json:"order_items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -66,9 +66,9 @@ func (x *CreateOrderRequest) GetUserId() int64 {
 	return 0
 }
 
-func (x *CreateOrderRequest) GetOrderItem() []*OrderItem {
+func (x *CreateOrderRequest) GetOrderItems() []*OrderItem {
 	if x != nil {
-		return x.OrderItem
+		return x.OrderItems
 	}
 	return nil
 }
@@ -224,7 +224,7 @@ func (x *GetOrderRequest) GetOrderId() int64 {
 type GetOrderResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	OrderItem     []*OrderItem           `protobuf:"bytes,2,rep,name=order_item,json=orderItem,proto3" json:"order_item,omitempty"`
+	OrderItems    []*OrderItem           `protobuf:"bytes,2,rep,name=order_items,json=orderItems,proto3" json:"order_items,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -266,9 +266,9 @@ func (x *GetOrderResponse) GetUserId() int64 {
 	return 0
 }
 
-func (x *GetOrderResponse) GetOrderItem() []*OrderItem {
+func (x *GetOrderResponse) GetOrderItems() []*OrderItem {
 	if x != nil {
-		return x.OrderItem
+		return x.OrderItems
 	}
 	return nil
 }
@@ -277,12 +277,12 @@ var File_order_order_proto protoreflect.FileDescriptor
 
 const file_order_order_proto_rawDesc = "" +
 	"\n" +
-	"\x11order/order.proto\"X\n" +
+	"\x11order/order.proto\"Z\n" +
 	"\x12CreateOrderRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12)\n" +
-	"\n" +
-	"order_item\x18\x02 \x03(\v2\n" +
-	".OrderItemR\torderItem\"i\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12+\n" +
+	"\vorder_items\x18\x02 \x03(\v2\n" +
+	".OrderItemR\n" +
+	"orderItems\"i\n" +
 	"\tOrderItem\x12!\n" +
 	"\fproduct_code\x18\x01 \x01(\tR\vproductCode\x12\x1d\n" +
 	"\n" +
@@ -291,12 +291,12 @@ const file_order_order_proto_rawDesc = "" +
 	"\x13CreateOrderResponse\x12\x19\n" +
 	"\border_id\x18\x01 \x01(\x03R\aorderId\",\n" +
 	"\x0fGetOrderRequest\x12\x19\n" +
-	"\border_id\x18\x01 \x01(\x03R\aorderId\"V\n" +
+	"\border_id\x18\x01 \x01(\x03R\aorderId\"X\n" +
 	"\x10GetOrderResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12)\n" +
-	"\n" +
-	"order_item\x18\x02 \x03(\v2\n" +
-	".OrderItemR\torderItem2l\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\x12+\n" +
+	"\vorder_items\x18\x02 \x03(\v2\n" +
+	".OrderItemR\n" +
+	"orderItems2l\n" +
 	"\x05Order\x125\n" +
 	"\x06Create\x12\x13.CreateOrderRequest\x1a\x14.CreateOrderResponse\"\x00\x12,\n" +
 	"\x03Get\x12\x10.GetOrderRequest\x1a\x11.GetOrderResponse\"\x00B2Z0github.com/sssseraphim/microservices-proto/orderb\x06proto3"
@@ -322,8 +322,8 @@ var file_order_order_proto_goTypes = []any{
 	(*GetOrderResponse)(nil),    // 4: GetOrderResponse
 }
 var file_order_order_proto_depIdxs = []int32{
-	1, // 0: CreateOrderRequest.order_item:type_name -> OrderItem
-	1, // 1: GetOrderResponse.order_item:type_name -> OrderItem
+	1, // 0: CreateOrderRequest.order_items:type_name -> OrderItem
+	1, // 1: GetOrderResponse.order_items:type_name -> OrderItem
 	0, // 2: Order.Create:input_type -> CreateOrderRequest
 	3, // 3: Order.Get:input_type -> GetOrderRequest
 	2, // 4: Order.Create:output_type -> CreateOrderResponse
